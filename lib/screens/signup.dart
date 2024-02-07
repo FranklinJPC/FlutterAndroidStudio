@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movies/screens/forgotpassword.dart';
 import 'package:provider/provider.dart';
-
+import 'package:movies/screens/login.dart';
 import '../theme/theme_state.dart';
 
-class LoginScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   final ThemeData? themeData;
-  LoginScreen({this.themeData});
+  SignUpScreen({this.themeData});
 
   @override
   Widget build(BuildContext context) {
@@ -23,34 +22,35 @@ class LoginScreen extends StatelessWidget {
           },
         ),
         title: Text(
-          'Log In',
+          'Sign Up',
           style: themeData!.textTheme.headline5,
         ),
       ),
-      body: LoginForm(themeData: themeData),
-
+      body: SignUpForm(themeData: themeData),
     );
   }
 }
 
-class LoginForm extends StatefulWidget {
+class SignUpForm extends StatefulWidget {
   final ThemeData? themeData;
-  LoginForm({this.themeData});
+  SignUpForm({this.themeData});
 
   @override
-  _LoginFormState createState() => _LoginFormState();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     final state = Provider.of<ThemeState>(context);
     return Container(
-      //color: widget.themeData?.scaffoldBackgroundColor, // Usa el color de fondo del tema
+      //color: widget.themeData?.scaffoldBackgroundColor,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -60,7 +60,43 @@ class _LoginFormState extends State<LoginForm> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                //color: widget.themeData?.primaryColor, // Usa el color primario del tema
+                //color: widget.themeData?.primaryColor,
+                child: TextFormField(
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                    labelText: 'Full Name',
+                    icon: Icon(Icons.person),
+                  ),
+                  style: widget.themeData?.textTheme.bodyText1,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your full name';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              SizedBox(height: 16),
+              Container(
+                //color: widget.themeData?.primaryColor,
+                child: TextFormField(
+                  controller: _lastNameController,
+                  decoration: InputDecoration(
+                    labelText: 'Last Name',
+                    icon: Icon(Icons.person),
+                  ),
+                  style: widget.themeData?.textTheme.bodyText1,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your last name';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              SizedBox(height: 16),
+              Container(
+                //color: widget.themeData?.primaryColor,
                 child: TextFormField(
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
@@ -79,7 +115,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
               SizedBox(height: 16),
               Container(
-                //color: widget.themeData?.primaryColor, // Usa el color primario del tema
+               // color: widget.themeData?.primaryColor,
                 child: TextFormField(
                   controller: _passwordController,
                   obscureText: true,
@@ -100,30 +136,32 @@ class _LoginFormState extends State<LoginForm> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
-                    // Acción del botón de inicio de sesión
+                    // Acción del botón de registro
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  //primary: widget.themeData?.primaryColor, // Usa el color primario del tema
+                  //primary: widget.themeData?.primaryColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                 ),
-                child: Text('Log In'),
+                child: Text('Sign Up'),
               ),
               SizedBox(height: 16),
               TextButton(
                 onPressed: () {
+
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ForgotPasswordScreen(
+                      builder: (context) => LoginScreen(
                         themeData: state.themeData,
                       ),
                     ),
                   );
                 },
-                child: Text('Forgot Password?'),
+                child: Text('Already have an account? Log In'),
               ),
             ],
           ),
@@ -132,3 +170,4 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
+

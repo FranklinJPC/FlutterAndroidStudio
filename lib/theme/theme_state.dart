@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'utils.dart';
 
-enum ThemeStateEnum { light, dark, amoled }
+enum ThemeStateEnum { customColor1, customColor2, customColor3 }
 
 class ThemeState extends ChangeNotifier {
   SharedPreferences? _sharedPreferences;
@@ -13,6 +13,11 @@ class ThemeState extends ChangeNotifier {
     _themeData = val;
     notifyListeners();
   }
+
+  // Colores personalizados
+  static const Color customColor1 = Color(0xffe1ecd6);
+  static const Color customColor2 = Color(0xffaee1d3);
+  static const Color customColor3 = Color(0xff7cd7cf);
 
   ThemeState() {
     _initSharedPrefs();
@@ -26,14 +31,23 @@ class ThemeState extends ChangeNotifier {
 
   void _switchTheme(ThemeStateEnum selected) {
     switch (selected) {
-      case ThemeStateEnum.light:
-        themeData = kLightTheme;
+      case ThemeStateEnum.customColor1:
+        themeData = ThemeData(
+          primaryColor: customColor1,
+          // Agrega otros colores personalizados según sea necesario
+        );
         break;
-      case ThemeStateEnum.dark:
-        themeData = kDarkTheme;
+      case ThemeStateEnum.customColor2:
+        themeData = ThemeData(
+          primaryColor: customColor2,
+          // Agrega otros colores personalizados según sea necesario
+        );
         break;
-      case ThemeStateEnum.amoled:
-        themeData = kAmoledTheme;
+      case ThemeStateEnum.customColor3:
+        themeData = ThemeData(
+          primaryColor: customColor3,
+          // Agrega otros colores personalizados según sea necesario
+        );
         break;
     }
   }
@@ -44,7 +58,7 @@ class ThemeState extends ChangeNotifier {
   }
 
   ThemeStateEnum _getOption() {
-    int option = _sharedPreferences?.get('theme_option') as int? ?? 1;
+    int option = _sharedPreferences?.getInt('theme_option') ?? 1;
     return ThemeStateEnum.values[option];
   }
 }
