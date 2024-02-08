@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   final ThemeData? themeData;
@@ -10,6 +11,7 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final TextEditingController _emailController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +63,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             SizedBox(height: 24),
             ElevatedButton(
               onPressed: () {
-                // Aquí puedes agregar la lógica para enviar el correo de recuperación
-                _showConfirmationDialog();
+                _sendResetLink(); // Llama a la función para enviar el correo de recuperación
               },
               style: ElevatedButton.styleFrom(
-                //primary: widget.themeData?.primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
@@ -76,6 +76,18 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         ),
       ),
     );
+  }
+
+
+  // Función para enviar el correo de recuperación de contraseña
+  Future<void> _sendResetLink() async {
+    try {
+      await _auth.sendPasswordResetEmail(email: _emailController.text);
+      _showConfirmationDialog();
+    } catch (e) {
+      print('Error sending reset link: $e');
+      // Puedes mostrar un mensaje de error o realizar otras acciones según necesites
+    }
   }
 
   void _showConfirmationDialog() {
@@ -98,4 +110,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       },
     );
   }
+
+
 }

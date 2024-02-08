@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1099213389115",
+    "project_id": "fir-flutter-codelab-9fe3e",
+    "storage_bucket": "fir-flutter-codelab-9fe3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099213389115:android:57100be5e94d693dd24b1e",
+        "android_client_info": {
+          "package_name": "com.bimsina.movies"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDin-S7SQ3a1nidzXDZW_dDxKmCaDHH-Io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099213389115:android:4430fcf1dd94d3bad24b1e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDin-S7SQ3a1nidzXDZW_dDxKmCaDHH-Io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099213389115:android:073bdf225d1f0071d24b1e",
+        "android_client_info": {
+          "package_name": "com.example.gtk_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDin-S7SQ3a1nidzXDZW_dDxKmCaDHH-Io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

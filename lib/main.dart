@@ -9,10 +9,18 @@ import 'package:movies/screens/settings.dart';
 import 'package:movies/screens/widgets.dart';
 import 'package:movies/theme/theme_state.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:movies/screens/splash_screen.dart';
 
 
-
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,  // Usa las opciones según la plataforma actual
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -24,7 +32,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: Colors.blue, canvasColor: Colors.transparent),
-        home: MyHomePage(),
+        home: SplashScreen(),
       ),
     );
   }
