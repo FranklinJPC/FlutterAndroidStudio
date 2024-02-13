@@ -1,39 +1,31 @@
-# Movies App made in Flutter with api data from TMDB
+# Evaluacion Flutter 
 
-This is an app that displays you details of movies that you can search for or browse.<br>
+## Integrantes
+* Franklin Patiño
+* Melani Molina<br>
 
-## Features :
+## App de escritorio :
 
-<ul>
-<li>Fetch api data from TMDB asynchronously.</li>
-<li>Dynamic Theming using Provider</li>
-<li>Search Functionality</li>
+La apliacion fue realizada de manera externa en el siguiente link: [Github](https://github.com/MelaniMolina/Desktop_app.git)
 
-</ul>
-Video Demo: https://youtu.be/5_bDIUYLWzg <br><br>
-<a href ="https://play.google.com/store/apps/details?id=com.bimsina.movies"><img src ="https://play.google.com/intl/en/badges/images/generic/en_badge_web_generic.png"></a>
-Screenshots:<br>
-<table style={border:"none"}><tr>
-<td><img src="https://user-images.githubusercontent.com/29589003/58170605-93aba280-7cb3-11e9-8733-dff46d1e86c7.png" alt="Screenshot 2"/></td>
-<td><img src="https://user-images.githubusercontent.com/29589003/58170608-93aba280-7cb3-11e9-933f-395501d7a5a0.png" alt="Screenshot 1"/></td>
-<td><img src="https://user-images.githubusercontent.com/29589003/58170610-94443900-7cb3-11e9-946f-79587eaa1043.png" alt="Screenshot 3"/></td>
+La app puede descargar desde aqui: [AppEscritorio](https://epnecuador-my.sharepoint.com/:u:/g/personal/franklin_patino_epn_edu_ec/EYAJgSbgg8lHo2QxCEnV84sB2AE7PdFogfJxfAxjyEaY3Q?e=ABeWlY)
 
-</tr>
-<tr>
-<td><img src="https://user-images.githubusercontent.com/29589003/58170611-94443900-7cb3-11e9-8f01-ce5fe83bb93e.png" alt="Screenshot 1"/></td>
+## APK:
 
-<td><img src="https://user-images.githubusercontent.com/29589003/58170612-94dccf80-7cb3-11e9-8955-ce6bba8b36dd.png" alt="Screenshot 2"/></td>
-<td><img src="https://user-images.githubusercontent.com/29589003/58170613-94dccf80-7cb3-11e9-9182-a08922ae7139.png" alt="Screenshot 3"/></td>
+Existe un error en el Grande que imposibilita la generacion del APK.
 
-</tr>
+## Evidencias:
+* Applicacion Movil
+  
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/048d3632-69bb-4386-8aeb-3ecdd91bbcdc)
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/cc2440d7-376a-48d2-83cd-3c94b477f472)
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/abd48c5e-faff-4323-a9e3-9f6277dab218)
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/332bc8b4-f571-43fa-8a58-9f405a8aaaf2)
 
-</table>
 
-## To run this app
-
-<ol>
-<li>Obtain api key from <a href ="https://www.themoviedb.org/">TMDB</a>.</li>
-<li>Replace YOUR_API_KEY in api_constants.dart with your api key.</li>
-<li>Run the app with <b>flutter run --release</b></li>
-
-</ol>
+* App de Windows
+  
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/7f94eb17-8d21-47a1-96be-d187e29cdeb7)
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/df464df0-d41e-49be-87dc-120329133ae5)
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/56273f8d-c5bc-4dda-80b1-1d48b972ccf5)
+![image](https://github.com/FranklinJPC/FlutterAndroidStudio/assets/117754105/87b3df42-d571-4e45-a73f-72e2996b30e8)
